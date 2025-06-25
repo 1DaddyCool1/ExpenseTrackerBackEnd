@@ -1,6 +1,6 @@
 package com.webService.security;
 
-import com.webService.service.UserDetailServiceImpl;
+import com.webService.service.impl.UserDetailServiceImpl;
 import com.webService.utils.JWTUtil;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

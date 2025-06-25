@@ -1,4 +1,4 @@
-package com.webService.service;
+package com.webService.service.impl;
 
 import com.webService.model.AppUser;
 import com.webService.repository.AppUserRepository;

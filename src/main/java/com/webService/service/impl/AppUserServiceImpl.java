@@ -1,7 +1,8 @@
-package com.webService.service;
+package com.webService.service.impl;
 
 import com.webService.model.AppUser;
 import com.webService.repository.AppUserRepository;
+import com.webService.service.AppUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

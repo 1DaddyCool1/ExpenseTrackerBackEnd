@@ -1,7 +1,8 @@
-package com.webService.service;
+package com.webService.service.impl;
 
 import com.webService.model.Expense;
 import com.webService.repository.ExpenseRepository;
+import com.webService.service.ExpenseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;

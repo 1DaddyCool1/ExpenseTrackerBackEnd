@@ -1,9 +1,11 @@
-package com.webService.service;
+package com.webService.service.impl;
 
 import com.webService.dto.AppUserDTO;
 import com.webService.dto.AuthDTO;
 import com.webService.dto.AuthResponseDTO;
 import com.webService.model.AppUser;
+import com.webService.service.AppUserService;
+import com.webService.service.AuthService;
 import com.webService.utils.JWTUtil;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
