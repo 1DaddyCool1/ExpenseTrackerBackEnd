@@ -7,4 +7,5 @@ import java.util.Optional;
 public interface AppUserService {
     AppUser findByUsername(String username);
     AppUser save(AppUser appUser);
+    Optional<AppUser> findUserById(Long id);
 }

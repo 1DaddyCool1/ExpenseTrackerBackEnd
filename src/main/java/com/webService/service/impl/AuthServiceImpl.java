@@ -4,6 +4,7 @@ import com.webService.dto.AppUserDTO;
 import com.webService.dto.AuthDTO;
 import com.webService.dto.AuthResponseDTO;
 import com.webService.model.AppUser;
+import com.webService.model.Role;
 import com.webService.service.AppUserService;
 import com.webService.service.AuthService;
 import com.webService.utils.JWTUtil;
@@ -38,12 +39,12 @@ public class AuthServiceImpl implements AuthService {
         appUser.setFullName(appUserDTO.getFullName());
         appUser.setUsername(appUserDTO.getUsername());
         appUser.setPassword(passwordEncoder.encode(appUserDTO.getPassword()));
-
+        appUser.setRole(Role.USER);
         appUserService.save(appUser);
 
         AuthDTO authDTO = new AuthDTO();
         authDTO.setUsername(appUserDTO.getUsername());
-        authDTO.setPassword(passwordEncoder.encode(appUserDTO.getPassword()));
+        authDTO.setPassword(appUserDTO.getPassword());
 
         return loginUser(authDTO);
     }

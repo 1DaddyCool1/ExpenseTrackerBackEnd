@@ -6,6 +6,8 @@ import com.webService.service.AppUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class AppUserServiceImpl implements AppUserService {
 
@@ -24,5 +26,10 @@ public class AppUserServiceImpl implements AppUserService {
     @Override
     public AppUser save(AppUser appUser) {
         return appUserRepository.save(appUser);
+    }
+
+    @Override
+    public Optional<AppUser> findUserById(Long id) {
+        return appUserRepository.findById(id);
     }
 }

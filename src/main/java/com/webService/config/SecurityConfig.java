@@ -43,7 +43,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authR ->
                         authR.requestMatchers("/signup", "/login")
                                 .permitAll()
-                                .anyRequest().authenticated()
+                                .requestMatchers("/admin/**").hasRole("ADMIN")
+                                .anyRequest().hasRole("USER")
                 )
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();
