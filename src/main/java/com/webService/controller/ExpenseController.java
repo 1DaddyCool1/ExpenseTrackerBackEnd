@@ -27,7 +27,7 @@ public class ExpenseController {
     }
 
     @GetMapping("/expenses")
-    public ResponseEntity<List<Expense>> getAllUserExpenses(Authentication  authentication) {
+    public ResponseEntity<List<Expense>> getAllUserExpenses(Authentication authentication) {
         String username = authentication.getName();
         AppUser appUser = appUserService.findByUsername(username);
         List<Expense> userExpenses = expenseService.getAllUserExpenses(appUser.getId());
@@ -38,7 +38,7 @@ public class ExpenseController {
     }
 
     @GetMapping("/expenses/categories")
-    public ResponseEntity<List<String>> getAllExpenseCategories(Authentication  authentication) {
+    public ResponseEntity<List<String>> getAllExpenseCategories(Authentication authentication) {
         String username = authentication.getName();
         AppUser appUser = appUserService.findByUsername(username);
         List<String> categories = expenseService.getAllExpenseCategories(appUser.getId());
@@ -49,7 +49,7 @@ public class ExpenseController {
     }
 
     @GetMapping("/expenses/day/{date}")
-    public ResponseEntity<List<Expense>> getExpensesByDay(@PathVariable String date, Authentication  authentication) {
+    public ResponseEntity<List<Expense>> getExpensesByDay(@PathVariable String date, Authentication authentication) {
         String username = authentication.getName();
         AppUser appUser = appUserService.findByUsername(username);
         List<Expense> dates = expenseService.getExpenseByDate(date, appUser.getId());
@@ -71,7 +71,7 @@ public class ExpenseController {
     }
 
     @GetMapping("/expenses/{id}")
-    public ResponseEntity<Optional<Expense>> getExpenseById(@PathVariable Long id, Authentication  authentication) {
+    public ResponseEntity<Optional<Expense>> getExpenseById(@PathVariable Long id, Authentication authentication) {
         String username = authentication.getName();
         AppUser appUser = appUserService.findByUsername(username);
         if(expenseService.getExpenseById(id, appUser.getId()).isPresent()) {
@@ -81,7 +81,7 @@ public class ExpenseController {
     }
 
     @PostMapping("/expenses")
-    public ResponseEntity<Expense> addExpense(@RequestBody Expense expense, Authentication  authentication) {
+    public ResponseEntity<Expense> addExpense(@RequestBody Expense expense, Authentication authentication) {
         String username = authentication.getName();
         AppUser appUser = appUserService.findByUsername(username);
         Expense expenseSaved = expenseService.addExpense(expense, appUser.getId());
@@ -89,7 +89,7 @@ public class ExpenseController {
     }
 
     @PutMapping("/expenses/{id}")
-    public ResponseEntity<Expense> updateExpense(@PathVariable Long id, @RequestBody Expense expense, Authentication  authentication) {
+    public ResponseEntity<Expense> updateExpense(@PathVariable Long id, @RequestBody Expense expense, Authentication authentication) {
         String username = authentication.getName();
         AppUser appUser = appUserService.findByUsername(username);
         expense.setId(id);
@@ -101,7 +101,7 @@ public class ExpenseController {
     }
 
     @DeleteMapping("expenses/{id}")
-    public ResponseEntity<Void> deleteExpense(@PathVariable Long id, Authentication  authentication) {
+    public ResponseEntity<Void> deleteExpense(@PathVariable Long id, Authentication authentication) {
         String username = authentication.getName();
         AppUser appUser = appUserService.findByUsername(username);
         boolean isDeleted = expenseService.deleteExpense(id, appUser.getId());

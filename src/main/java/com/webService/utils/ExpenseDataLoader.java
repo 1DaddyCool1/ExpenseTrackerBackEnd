@@ -20,8 +20,7 @@ public class ExpenseDataLoader {
     private static List<Expense> expenses = new ArrayList<Expense>();
 
     @PostConstruct
-    public void init()
-    {
+    public void init() {
         ObjectMapper objectMapper = new ObjectMapper();
         InputStream is = getClass().getResourceAsStream("/expenses.json");
         try {

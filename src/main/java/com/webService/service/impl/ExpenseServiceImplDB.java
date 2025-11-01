@@ -69,7 +69,7 @@ public class ExpenseServiceImplDB implements ExpenseService {
         Optional<AppUser> userOptional = appUserService.findUserById(userId);
         if (userOptional.isPresent()) {
             AppUser appUser = userOptional.get();
-            expense.setAppUser(appUser);
+            expense.setUser(appUser);
             return expenseRepository.save(expense);
         } else {
             throw new RuntimeException("User not found");
@@ -80,7 +80,7 @@ public class ExpenseServiceImplDB implements ExpenseService {
     public boolean updateExpense(Expense updatedExpense, Long userId) {
         Optional<Expense> expenseOptional = expenseRepository.findByIdAndUserId(updatedExpense.getId(), userId);
         if(expenseOptional.isPresent()) {
-            updatedExpense.setAppUser(expenseOptional.get().getAppUser());
+            updatedExpense.setUser(expenseOptional.get().getUser());
             expenseRepository.save(updatedExpense);
             return true;
         }
