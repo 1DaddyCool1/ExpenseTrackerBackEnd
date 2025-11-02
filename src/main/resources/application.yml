@@ -9,7 +9,7 @@ spring:
     #jdbc:h2:mem:expensedb;DB_CLOSE_DELAY=-1 #URL for H2 database in memory mode
     driver-class-name: org.postgresql.Driver # JDBC driver for H2
     username: neondb_owner
-    password: o
+    password: 123
   h2:
     console:
       enabled: true

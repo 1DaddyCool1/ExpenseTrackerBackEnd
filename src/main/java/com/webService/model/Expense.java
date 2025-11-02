@@ -21,5 +21,5 @@ public class Expense {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     @JsonIgnore
-    private AppUser appUser;
+    private AppUser user;
 }
