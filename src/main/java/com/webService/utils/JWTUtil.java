@@ -20,7 +20,7 @@ public class JWTUtil {
                 .claims(claims)
                 .subject(username)  // Setting the username as the subject of the token
                 .issuedAt(new Date(System.currentTimeMillis()))  // Token creation time
-                .expiration(new Date(System.currentTimeMillis() + 2000 * 60 * 60 * 10))  // 20-hour validity
+                .expiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 10))  // 10-hour validity
                 .signWith(SECRET_KEY)  // Signing the token with the secret key
                 .compact();
     }
