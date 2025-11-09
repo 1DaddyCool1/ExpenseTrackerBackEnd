@@ -11,14 +11,6 @@ repositories {
     mavenCentral()
 }
 
-tasks.named('jar') {
-    enabled = false
-}
-
-tasks.named('bootJar') {
-    archiveFileName = 'ExpenseTracker.jar'
-}
-
 dependencies {
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
     implementation 'org.springframework.boot:spring-boot-starter-web'
